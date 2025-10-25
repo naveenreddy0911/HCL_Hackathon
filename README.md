@@ -53,3 +53,23 @@ Input params: user_id, sender_account_number, receiver_account_number, amount, p
 Returns: success/failure, current_balance
 ### 7. Reporting & Dashboard
 ## Transactions: id, user_id (foreign key), account_id (foreign key), type (withdrawal, deposit, transfer), sender_account_number, receiver_account_number
+
+# How to run the app
+1. Create virtual environment
+2. Install all required libraries
+3. Create a .env file in the root folder
+   
+## .env 
+```
+DATABASE_URL = "postgresql+psycopg2://postgres:<password>@localhost:5432/<database_name>"
+SECRET_KEY = "ajkshacoac7scajhdcbksdcjn" (a long random string)
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
+```
+
+## Test cases
+```
+PYTHONPATH=$(pwd) pytest tests/ -v
+```
+
+<img width="1710" height="1107" alt="Screenshot 2025-10-25 at 5 49 47 PM" src="https://github.com/user-attachments/assets/b8a57859-827e-4def-ba79-8eebbf0eedf2" />
