@@ -14,3 +14,4 @@ class User(Base):
     kyc_status = Column(Enum('pending', 'in_progress', 'completed', name="kyc_status"), default='pending')
     
     kyc_documents = relationship("KYC_Documents", back_populates="user")
+    accounts = relationship("Account", back_populates="user")
