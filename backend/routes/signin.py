@@ -10,7 +10,7 @@ router = APIRouter()
 def signin(user: UserSignin, db: Session = Depends(get_db)):
     db_user = authenticate_user(db, user)
     if not db_user:
-        raise HTTPException(status_code=401)
+        raise HTTPException(status_code=401, detail="Email or password didn't match")
     
     return {
         "message": "Your are now signed in"

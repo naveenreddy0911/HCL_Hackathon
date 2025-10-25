@@ -4,3 +4,5 @@ SQLAlchemy
 psycopg2-binary
 python-dotenv
 email-validator
+
+passlib[argon2]
