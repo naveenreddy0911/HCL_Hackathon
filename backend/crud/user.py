@@ -14,3 +14,9 @@ def authenticate_user(db: Session, user: UserSignin):
     if not db_user or db_user.password!=user.password:
         return False
     return db_user
+
+def get_user_by_email(db: Session, email: str):
+    return db.query(User).filter(User.email == email).first()
+
+def get_user_by_id(db: Session, id: int):
+    return db.query(User).filter(User.id == id).first()
