@@ -20,5 +20,5 @@ class AccountCreate(BaseModel):
     pin: Pin
     
 class AccountResponse(AccountBase):
-    class Config:
-        orm_mode = True
+    class ConfigDict:
+        from_attributes = True

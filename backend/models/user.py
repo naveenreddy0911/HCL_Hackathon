@@ -15,3 +15,11 @@ class User(Base):
     
     kyc_documents = relationship("KYC_Documents", back_populates="user")
     accounts = relationship("Account", back_populates="user")
+    # transactions = relationship("Transaction", back_populates="user")
+    
+def create_test_user(db, name="Test User", email="test@example.com"):
+    user = User(name=name, email=email, password="hashed_dummy")
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+    return user
