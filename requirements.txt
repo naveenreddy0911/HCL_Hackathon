@@ -6,3 +6,5 @@ python-dotenv
 email-validator
 
 passlib[argon2]
+
+python-jose[cryptography]
