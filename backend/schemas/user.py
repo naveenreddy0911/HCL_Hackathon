@@ -10,3 +10,9 @@ class UserSignup(UserBase):
 class UserSignin(BaseModel):
     email: EmailStr
     password: str
+    
+class UserResponse(UserBase):
+    id: int
+
+    class Config:
+        from_attributes = True

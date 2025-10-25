@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, Enum
 from sqlalchemy.sql import func
 from backend.db import Base
 
@@ -10,3 +10,4 @@ class User(Base):
     password = Column(String)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, onupdate=func.now())
+    kyc_status = Column(Enum('pending', 'in_progress', 'completed', name="kyc_status"), default='pending')
